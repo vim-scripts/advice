@@ -1,0 +1,27 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2402
+
+*advice* is a library for Vim scripts to provide a modular way to alter the
+behavior of a command.
+
+For example, if you want to change the default register for the command |C| to
+"_ (|quote_|), you have to write a new operator then map |C| to execute the
+operator, i.e., redefine the whole command.  But how about if you also want to
+change |C| in Visual mode to always behave as same as the default |C| in
+|blockwise-visual| mode?  How about if you want to disable one of the altered
+behaviors afterwards?  Therefore, redefining the whole command is not elegant
+way.
+
+ADVICE provides useful API to do such customization.
+
+The concept of ADVICE is derived from the one of Emacs.  See also:
+http://www.gnu.org/software/emacs/elisp/html_node/Advising-Functions.html .
+Note that there are some differences from the one of Emacs, especially: there
+is no activation and ADVICE supports "usual" commands only (see
+|advice-Normal-command|).  Because Ex commands and functions cannot be
+supported only by Vim script.
+
+Requirements:
+- Vim 7.2 or later
+
+Latest version:
+http://github.com/kana/vim-advice
